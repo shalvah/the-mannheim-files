@@ -69,7 +69,13 @@ function getPublicState() {
 // Middleware
 // ---------------------------------------------------------------------------
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders(res, filePath) {
+    if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+    }
+  },
+}));
 
 function requireAdmin(req, res, next) {
   const pw = req.headers['x-admin-password'] || req.body?.password;
