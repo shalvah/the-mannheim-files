@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: the-mannheim-files
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: ADMIN_PASSWORD
+        generateValue: false   # Set this manually in the Render dashboard
+      - key: NODE_ENV
+        value: production

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Mannheim Files</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <span class="logo">The Mannheim Files</span>
+    <span class="badge" id="task-badge"></span>
+  </header>
+
+  <div id="screen">
+
+    <!-- LOBBY -->
+    <div id="phase-lobby" class="hidden">
+      <div class="lobby-wrap">
+        <h1>The Mannheim Files</h1>
+        <p>Get your map and pencil ready.<br>The game will begin shortly.</p>
+      </div>
+    </div>
+
+    <!-- TASK -->
+    <div id="phase-task" class="hidden">
+      <div class="card">
+        <div class="task-header">
+          <span class="task-label" id="task-label">Task 1</span>
+        </div>
+
+        <div class="timer-wrap">
+          <svg class="timer-ring" width="120" height="120" viewBox="0 0 120 120">
+            <circle class="track" cx="60" cy="60" r="52"/>
+            <circle class="prog"  cx="60" cy="60" r="52" id="timer-prog"/>
+          </svg>
+          <div class="timer-digits" id="timer-digits">1:00</div>
+        </div>
+
+        <p class="task-description" id="task-description"></p>
+        <img class="task-image hidden" id="task-image" alt="Task image" />
+      </div>
+    </div>
+
+    <!-- WAITING (interstitial while admin enters scores) -->
+    <div id="phase-score-entry" class="hidden">
+      <div class="waiting-wrap">
+        <div class="spinner"></div>
+        <h2>Time's up!</h2>
+        <p>Waiting for the Game Master to record scores&hellip;</p>
+      </div>
+    </div>
+
+    <!-- SCOREBOARD -->
+    <div id="phase-scoreboard" class="hidden">
+      <div class="card">
+        <h2 style="margin-bottom:1rem">Scores</h2>
+        <div class="scoreboard" id="scoreboard-rows"></div>
+      </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="phase-game-over" class="hidden">
+      <div class="gameover-wrap">
+        <h1>Game Over!</h1>
+        <p>Final standings:</p>
+        <div class="card" style="width:100%">
+          <div class="scoreboard" id="gameover-rows"></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- #screen -->
+
+  <script src="/player.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — The Mannheim Files</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <span class="logo">Admin Panel</span>
+    <span class="badge" id="task-badge"></span>
+  </header>
+
+  <div id="screen">
+
+    <!-- AUTH -->
+    <div id="phase-auth">
+      <div class="auth-wrap">
+        <h2>Game Master Login</h2>
+        <input type="password" id="password-input" placeholder="Password" autocomplete="current-password" />
+        <button class="btn btn-primary btn-full" id="auth-btn">Unlock</button>
+        <p class="auth-error hidden" id="auth-error">Wrong password. Try again.</p>
+      </div>
+    </div>
+
+    <!-- LOBBY (pre-game) -->
+    <div id="phase-lobby" class="hidden">
+      <div class="card">
+        <p class="admin-phase-label">Pre-game</p>
+        <h2 style="margin-bottom:.5rem">Ready to start?</h2>
+        <p id="task-count-info" style="margin-bottom:1.25rem"></p>
+        <button class="btn btn-primary btn-full" id="start-btn">Start Game</button>
+      </div>
+    </div>
+
+    <!-- TASK (active round) -->
+    <div id="phase-task" class="hidden">
+      <div class="card">
+        <p class="admin-phase-label">Round in progress</p>
+        <div class="task-header">
+          <span class="task-label" id="task-label">Task 1</span>
+        </div>
+
+        <div class="timer-wrap">
+          <svg class="timer-ring" width="120" height="120" viewBox="0 0 120 120">
+            <circle class="track" cx="60" cy="60" r="52"/>
+            <circle class="prog"  cx="60" cy="60" r="52" id="timer-prog"/>
+          </svg>
+          <div class="timer-digits" id="timer-digits">1:00</div>
+        </div>
+
+        <p class="task-description" id="task-description" style="margin-bottom:1rem"></p>
+        <img class="task-image hidden" id="task-image" alt="Task image" style="margin-bottom:1rem" />
+
+        <button class="btn btn-secondary btn-full" id="end-task-btn">End Round Early</button>
+      </div>
+    </div>
+
+    <!-- SCORE ENTRY -->
+    <div id="phase-score-entry" class="hidden">
+      <div class="card">
+        <p class="admin-phase-label">Enter scores</p>
+        <h2 style="margin-bottom:.25rem">Award points</h2>
+        <p style="margin-bottom:.75rem;font-size:.9rem">4 = best, 0 = no answer</p>
+
+        <div class="score-entry-grid" id="score-entry-grid">
+          <!-- rows injected by JS -->
+        </div>
+
+        <button class="btn btn-success btn-full" id="submit-scores-btn">Submit Scores</button>
+      </div>
+    </div>
+
+    <!-- SCOREBOARD -->
+    <div id="phase-scoreboard" class="hidden">
+      <div class="card">
+        <p class="admin-phase-label">Scoreboard</p>
+        <h2 style="margin-bottom:1rem">After round <span id="scoreboard-round"></span></h2>
+        <div class="scoreboard" id="scoreboard-rows" style="margin-bottom:1.25rem"></div>
+        <button class="btn btn-primary btn-full" id="next-btn">Next Task</button>
+      </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="phase-game-over" class="hidden">
+      <div class="card">
+        <p class="admin-phase-label">Game Over</p>
+        <h2 style="margin-bottom:1rem;color:gold">Final Standings</h2>
+        <div class="scoreboard" id="gameover-rows" style="margin-bottom:1.5rem"></div>
+        <button class="btn btn-secondary btn-full" id="reset-btn">Reset Game</button>
+      </div>
+    </div>
+
+  </div><!-- #screen -->
+
+  <script src="/admin.js"></script>
+</body>
+</html>

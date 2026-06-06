@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "description": "Where was this photo of the Mannheim tower (Fernmeldeturm)taken from? Mark the location on your map.",
+    "image": "/images/PXL_20251011_103220347.jpg"
+  },
+  {
+    "id": 2,
+    "description": "Find the sports field shown in this photo and mark it on your map.",
+    "image": "/images/PXL_20240613_130330057.jpg"
+  },
+  {
+    "id": 3,
+    "description": "This photo was taken from a bridge. Mark it on your map.",
+    "image": "/images/PXL_20231223_142753885.jpg"
+  },
+  {
+    "id": 4,
+    "description": "Mark the location of the Mannheim Palace on your map.",
+    "image": null
+  },
+  {
+    "id": 5,
+    "description": "Where was this street scene photographed?",
+    "image": "/images/PXL_20231223_143636725.jpg"
+  },
+  {
+    "id": 6,
+    "description": "Where is this popular location? Mark it on your map.",
+    "image": "/images/PXL_20260419_042308321.jpg"
+  }
+]
