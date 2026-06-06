@@ -66,6 +66,7 @@ body {
 .btn-success  { background: var(--green);  color: #111; }
 .btn-full     { width: 100%; text-align: center; }
 
+h1, h2 { font-family: 'Syncopate', sans-serif; letter-spacing: .04em; }
 h1 { font-size: clamp(1.4rem, 5vw, 2.2rem); }
 h2 { font-size: clamp(1.1rem, 4vw, 1.6rem); }
 p  { line-height: 1.6; color: var(--muted); }
